@@ -28,7 +28,7 @@ form = """
     </html>
 """
 
-@app.route("/")
+@app.route('/', methods=['POST'])
 def index():
     return form
 
