@@ -21,35 +21,32 @@ form = """
                     width: 540px;
                     height: 120px;
                 }
+                p.error {
+                    color: red;
+                }
             </style>
         </head>
         <body>
-             <form id="contact-form" action="script.php" method="post">
-                <input type="hidden" name="redirect" value="http://www.opera.com" />
-                <ul>
-                    <li>
-                        <label for="input">Input</label>
-                        <textarea name="input" id="input" cols="25" rows="3"></textarea>
-                    </li>
-                    <li>
-                        <label for="output">Output</label>
-                        <textarea name="rot" id="rot" cols="25" rows="3"></textarea>
-                    </li>
-                    <li>
-                        <input type="submit" value="submit" />
-                        <input type="reset" value="reset" />
-                    </li>
-                </ul>
+            <form method="post">
+                <div>
+                    <label for="rot">Rotate by:</label>
+                    <input type="text" name="rot" value="0">
+                    <p class="error"></p>
+                </div>
+                <textarea type="text" name="text"></textarea>
+                <br>
+                <input type="submit">
             </form>
         </body>
     </html>
 """
+@app.route('/encrypt', methods=['POST'])
+def encrypt(text, rot):
+
+    return 
 
 @app.route('/', methods=['POST'])
 def index():
     return form
-
-
-def encrypt():
 
 app.run()
